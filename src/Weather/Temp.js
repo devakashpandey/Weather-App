@@ -1,17 +1,49 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Temp.css"
 
 function Temp() {
+
+   let [searchItem, setSearchItem] = useState("Patna")
+
+   let getWeatherData = async () =>{
+         try {
+               let BASE_URL =  `https://api.openweathermap.org/data/2.5/weather?q=${searchItem}
+                                &units=metric&appid=99578f76a3bac90e2a9941ca95f09698` // &units=metric (FOR CONVERT FR TO CEL)    
+                 
+                 let responce = await fetch(BASE_URL);
+                 let data = await responce.json();
+                 
+                 let {temp, humidity, pressure} = data.main;  // EXTRACTING VALUES
+                 let {main:weathermood} = data.weather[0] // array of an object
+
+            
+
+         } catch (error) {
+            console.log(error)
+         }
+   }
+
+//  for the first timne to get and show the data after open app
+   useEffect(()=>{
+     getWeatherData();
+
+   }, [])
+
   return (
      <>
       <div className='wrap'>
+
         <div className='search'>
            <input type="search"
            placeholder='Enter any place'
            autoFocus
            className='searchTerm'
+           value={searchItem}
+           onChange={(e)=> setSearchItem(e.target.value)}
            /> 
-            <button className='searchButton'>Search</button>
+
+            <button className='searchButton' onClick={getWeatherData}>Search</button>
+
         </div>
       </div>
 
@@ -56,19 +88,19 @@ function Temp() {
                       <div className='two-sided-section'>
                          <p><i className={"wi wi-rain"} ></i></p>
                          <p className='text-info'>19:19 pm <br/>
-                              Rain
+                              Pressure
                          </p>
                       </div>
 
                       <div className='two-sided-section'>
                          <p><i className={"wi wi-strong-wind"} ></i></p>
                          <p className='text-info'>19:19 pm <br/>
-                              Wind
+                              Speed
                          </p>
                       </div>
             </div>
       </div>
-      
+
     </div>
 
      </>
