@@ -1,5 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Poiret+One);
-
+/* weather icon url */
 @import url(https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css);
 
 * {
@@ -100,7 +99,7 @@ justify-content: space-around;
 .weather-box .weather-info {
 width:70%;
 height: 40%;
-background: #171717;
+background: #201f1f;
 display: flex;
 align-items: center;
 color: white;
@@ -115,7 +114,6 @@ justify-content: space-around;
 }
 
 .weather-box .weather-info .description {
-/* flex: 0 60%; */
 display: flex;
 flex-direction: column;
 width: 100%;
@@ -146,82 +144,38 @@ font-weight: 500;
 text-align: center;
 }
 
-   
-/* :root {
---rad: 0.7rem;
---dur: 0.3s;
---color-dark: #454444;
---color-light: #fff;
---color-brand: #57bd84;
---font-fam: "Lato", sans-serif;
---height: 5rem;
---btn-width: 6rem;
---bez: cubic-bezier(0, 0, 0.43, 1.49);
-}
-                     */
+/* weather extra information  */
 
-/* 
-
-
-
-.widget .date {
-  flex: 0 0 30%;
-  height: 40%;
-  background: #70c1b3;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  color: white;
-  font-size: 30px;
-  font-weight: 800;
-  text-align: center;
+.weather-box .temp-info {
+width:100%;
+padding: 25px 10px;
+border-bottom-left-radius: 20px;
+border-bottom-right-radius: 20px;
+background: #fafafa;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+align-items: center;
 }
 
-.widget .extra-temp {
-  flex: 1 100%;
-  padding: 5% 0;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  background: #fafafa;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-  font-size: 100px;
+.weather-box .temp-info p {
+font-size: 24px;
+font-weight: 500;
 }
 
-.widget .extra-temp p {
-  font-size: 25px;
-  font-weight: 600;
-}
-
-.temp-info-minmax,
-.weather-extra-info,
+.temp-min-max,
 .two-sided-section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   text-align: center;
   align-items: center;
-  color: #70c1b3;
-   background-color: blanchedalmond; 
+  color: #0ea4b8;
 }
 
-.widget .extra-temp .extra-info-leftside {
-  text-align: left;
-  font-weight: 600;
-  text-transform: capitalize;
-  color: #080705;
-  font-size: 15px;
-} */
-
-
-
-
-
-/*Resize the wrap to see the search bar change!*/
-/* .wrap {
-  width: 30%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-} */
+.weather-box .temp-info .text-info {
+text-align: left;
+font-weight: 500;
+text-transform: capitalize;
+color: #080705;
+font-size: 15px;
+} 
+                    
