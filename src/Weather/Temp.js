@@ -22,14 +22,22 @@ function Temp() {
           <i className={"wi wi-day-sunny"}></i>
           </div>
 
-          <div className='weatherInfo'>
-            <div className='tempreture'>
+          <div className='weather-info'>
+            <div className='temp'>
               <span>25.5&deg;</span>
             </div>
+
+          <div className='description'>
+             <div className='weather-cond'>Sunny</div>
+             <div className='place'> Pune,India </div>
           </div>
-    
+
+        </div>
+
+      <div className='date'>{new Date().toLocaleString()}</div>
 
     </div>
+
 
 
      </>
